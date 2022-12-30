@@ -1,14 +1,12 @@
-resource "upcloud_server" "poste" {
-  hostname = "poste"
+resource "upcloud_server" "testing" {
+  hostname = "testing.cultura.lab"
   count = 1
   zone = "us-nyc1"
   plan = "1xCPU-1GB"
 
-  storage_devices {
+  template {
     size = 25
     storage = "Ubuntu Server 20.04 LTS (Focal Fossa)"
-    tier   = "maxiops"
-    action = "clone"
   }
 
   network_interface {
@@ -20,9 +18,9 @@ resource "upcloud_server" "poste" {
   }
 
   login {
-    user = "USUARIO"
+    user = "root"
     keys = [
-      "SSH_PUBLIC_KEY"
+      "ssh-rsa pub_key"
     ]
     create_password = false
   }
@@ -30,8 +28,8 @@ resource "upcloud_server" "poste" {
   connection {
     host        = self.network_interface[0].ip_address
     type        = "ssh"
-    user        = "USUARIO"
-    private_key = file("SSH_PRIVATE_KEY")
+    user        = "root"
+    private_key = file("~/.ssh/id_rsa")
   }
 
   provisioner "remote-exec" {
