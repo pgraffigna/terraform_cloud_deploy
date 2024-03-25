@@ -31,4 +31,4 @@ aws_access_key_id=testing_ACCESS
 aws_secret_access_key=testing_SECRET
 EOF
 
-## export AWS_PROFILE=localstack
+# export AWS_PROFILE=localstack

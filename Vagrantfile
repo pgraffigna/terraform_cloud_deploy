@@ -1,6 +1,6 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 IMAGEN = "generic/ubuntu2204"
-HOSTNAME = "localstack.home.lab"
+HOSTNAME = "terraform.home.lab"
 
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
@@ -10,8 +10,8 @@ Vagrant.configure("2") do |config|
     s.vm.box = IMAGEN
     s.vm.hostname = HOSTNAME
     s.vm.box_check_update = false
-    s.vm.provision :docker
-    s.vm.provision :docker_compose
+    # s.vm.provision :docker
+    # s.vm.provision :docker_compose
     s.vm.provider :libvirt do |v|
       v.memory = 2048
       v.cpus = 2
