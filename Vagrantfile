@@ -10,9 +10,10 @@ Vagrant.configure("2") do |config|
     s.vm.box = IMAGEN
     s.vm.hostname = HOSTNAME
     s.vm.box_check_update = false
-    # s.vm.provision :docker
-    # s.vm.provision :docker_compose
+    s.vm.provision "shell", path: "terraform_installer.sh"
+
     s.vm.provider :libvirt do |v|
+      v.disk_bus = "virtio"
       v.memory = 2048
       v.cpus = 2
       v.graphics_type = 'none'
