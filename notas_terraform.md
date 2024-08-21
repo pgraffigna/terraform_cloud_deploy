@@ -10,7 +10,7 @@ terraform plan
 
 ### Aplica la configuración
 ```shell
-terraform apply
+terraform apply -auto-approve
 ```
 
 ### Revisa los recursos a destruir

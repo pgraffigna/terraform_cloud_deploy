@@ -9,13 +9,13 @@ terraform {
 
 provider "aws" {
    region = "us-east-1"
-   access_key = "ACCESS_KEY"
-   secret_key = "SECRET_KEY"
+   access_key = "AKIAQKPIL7S4K2GMC34K"
+   secret_key = "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"
 }
 
 # Definir un par de claves para acceder a la instancia
-resource "aws_key_pair" "test-keys" {
-   key_name   = "test-keys-cli"
+resource "aws_key_pair" "pgraffigna" {
+   key_name   = "pgraffigna-cli"
    public_key = file("~/.ssh/id_rsa.pub")
 }
 
@@ -53,8 +53,7 @@ egress {
 resource "aws_instance" "EC2-free_tier-01" {
    ami           = "ami-0ae8f15ae66fe8cda"  # Amazon Linux 2, free tier eligible AMI
    instance_type = "t2.micro"  # Free tier elegible instance type
-
-   key_name      = aws_key_pair.test-keys.key_name
+   key_name      = aws_key_pair.pgraffigna.key_name
    security_groups = [aws_security_group.webserver.name]
 
    user_data = <<-EOF
