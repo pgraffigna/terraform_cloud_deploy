@@ -22,6 +22,7 @@ La idea del proyecto es automatizar vía terraform el despliegue de infraestruct
 ### Extras
 * Archivo de configuración (Vagrantfile) para desplegar una VM descartable con ubuntu-22.04 con libvirt como hipervisor.
 * Archivo con notas para utilizar terraform.
+* Script para instalar terraform en linx.
 
 ### Uso Vagrant
 ```shell

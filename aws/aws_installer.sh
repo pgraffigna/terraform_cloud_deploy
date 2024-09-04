@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# Autor: Pablo Graffigna
+# URL: www.linkedin.com/in/pablo-graffigna
+#
+
 # Colores
 VERDE="\e[0;32m\033[1m"
 ROJO="\e[0;31m\033[1m"

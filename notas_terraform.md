@@ -1,29 +1,12 @@
-### Inicializa Terraform
-```shell
-terraform init
-```
+# comandos
 
-### Revisa el plan de ejecución
-```shell
-terraform plan
-```
-
-### Aplica la configuración
-```shell
-terraform apply -auto-approve
-```
-
-### Revisa los recursos a destruir
-```shell
-terraform plan -destroy
-```
-
-### Destruye los recursos
-```shell
-terraform destroy
-```
-
-### Eliminar recursos específicos
-```shell
-terraform destroy -target=aws_instance.EC2-free_tier-01
-```
+| comando                                                 | Descripcion                                                 |
+|---------------------------------------------------------|-------------------------------------------------------------|
+| terraform init  	                                      |  Inicializa Terraform  	                                    |
+| terraform fmt	                                          | Formatea los archivos tf                                    |
+| terraform validate	                                    | Valida la configuracion del plan                            |
+| terraform plan 	                                        | Lista el plan de ejecución  	                              |
+| terraform plan -destroy                                 | Revisa los recursos a destruir                              |
+| terraform apply -auto-approve	                          | Aplica la configuración                                     |
+| terraform destroy	                                      | Destruye los recursos                                       |
+| terraform destroy -target=aws_instance.ec2-01         	| Destruye una instancia especifica                           |
