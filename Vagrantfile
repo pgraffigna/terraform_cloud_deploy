@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     s.vm.hostname = HOSTNAME
     s.vm.box_check_update = false
     s.vm.provision "shell", path: "terraform_installer.sh"
+    s.vm.provision "shell", path: "aws_installer.sh"
 
     s.vm.provider :libvirt do |v|
       v.disk_bus = "virtio"

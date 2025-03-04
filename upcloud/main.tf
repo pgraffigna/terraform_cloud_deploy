@@ -1,5 +1,5 @@
 resource "upcloud_server" "testing" {
-  hostname = "testing.cultura.lab"
+  hostname = "testing.home.local"
   count = 1
   zone = "us-nyc1"
   plan = "1xCPU-1GB"
