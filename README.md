@@ -8,10 +8,11 @@ Testeado con Vagrant + QEMU + ubuntu_22.04.
 
 ### Descripción
 
-La idea del proyecto es automatizar vía terraform el despliegue de infraestructura en diferentes proveedores cloud, el repo cuenta con 4 perfiles:
+La idea del proyecto es automatizar vía terraform el despliegue de infraestructura en diferentes proveedores, el repo cuenta con 4 perfiles:
 1. aws
 2. proxmox
 3. upcloud
+4. vagrant
 
 ### Dependencias
 
@@ -42,23 +43,3 @@ vagrant ssh
 | terraform apply -auto-approve	                          | Aplica la configuración                                     |
 | terraform destroy	                                      | Destruye los recursos                                       |
 | terraform destroy -target=aws_instance.ec2-01         	| Destruye una instancia especifica                           |
-
-### S3 policy acceso publico a los archivos
-```shell
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowPublicRead",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::Bucket-Name/*"
-            ]
-        }
-    ]
-}
-```
